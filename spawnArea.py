@@ -1,10 +1,11 @@
 #Spawn area
+import stats
 
-print("you are standing in a pile of crappy debug sample text.")
+print("\nyou are standing in a pile of crappy debug sample text.")
 
 def act(action):
 	if action.lower() == "look around":
-		print("There are a bunch of debug texts.")
-		act(action)
-	elif action.lower() == "suicide":
-		print("You stabbed yourself with a debug text")
+		print("\nThere are a bunch of debug texts.")
+	elif action.lower() == "damage":
+                print("\nYou stabbed yourself with a debug text.")
+                stats.damage(10)

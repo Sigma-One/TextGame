@@ -5,14 +5,21 @@ print("starting game")
 import inventory as inv
 print("Inventory loaded.")
 
+import stats
+print("Stats loaded.")
+
 def setLevel(level):
 	global lvl
 	lvl = __import__(level)
 
-setLevel("spawnArea")	
+setLevel("spawnArea")
 
-action = raw_input("What do you want to do?")
-
-lvl.act(action)
-
-
+while 1 == 1:	
+        
+        action = raw_input("\nWhat do you want to do? ")
+        
+        lvl.act(action)
+        
+        if stats.getHealth() < 1:
+                print("You died.")
+                exit(0)
