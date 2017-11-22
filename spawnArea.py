@@ -1,11 +1,10 @@
 #Spawn area
 import stats
 
-print("\nyou are standing in a pile of crappy debug sample text.")
+print("\nYou are in your bedroom. You have been stuck here for two hours now because you lost the key to the door.")
 
 def act(action):
-	if action.lower() == "look around":
-		print("\nThere are a bunch of debug texts.")
-	elif action.lower() == "damage":
-                print("\nYou stabbed yourself with a debug text.")
-                stats.damage(10)
+	if action.lower() == "look aroundy":
+		print("\nThere is a bed and a window with curtains over it. There is also a door next to the window and another one on the opposite side of the room.")
+	elif action.lower() == "open the curtains":
+                print("\nYou opened the curtains. You can see into your back yard.")
