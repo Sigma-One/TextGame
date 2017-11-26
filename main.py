@@ -1,17 +1,19 @@
 #Just testing text based games again
 import util
-
-print("starting game")
-
+import levelLoader
 import stats
+import inventory as inv
 
-util.setLevel("spawnArea")
+while 1 == 1:
+	currentLevel = util.getLevel()	
+	#print(currentLevel)        
 
-while 1 == 1:	
-        
-        action = raw_input("\nWhat do you want to do? ")
-        
-        util.lvl.act(action)
+        action = raw_input("\nWhat do you want to do? ").lower()
+	
+	if action.replace("at", "in").replace(" your", "") == "look in inventory":
+		inv.get()
+	else:        
+	        currentLevel.act(action)
         
         if stats.getHealth() < 1:
                 print("You died.")
