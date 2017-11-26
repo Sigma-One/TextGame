@@ -26,7 +26,7 @@ class main():
         	        if hasKey:
         	                print("\nYou pick up the key on the ground.")
 				hasKey = False
-				inv.add("Bedroom key")
+				inv.add("living room key")
         	        else:
         	                print("\nYou already picked up the key.")
 	

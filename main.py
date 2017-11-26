@@ -11,7 +11,7 @@ while 1 == 1:
         action = raw_input("\nWhat do you want to do? ").lower()
 	
 	if action.replace("at", "in").replace(" your", "") == "look in inventory":
-		inv.get()
+		inv.list()
 	else:        
 	        currentLevel.act(action)
         

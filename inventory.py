@@ -4,7 +4,7 @@ import sys
 
 inventory = set()
 
-def get():
+def list():
 	j = 0
 	print("\nYour inventory contains:")
 	for i in inventory:
@@ -23,3 +23,10 @@ def remove(item):
 	item = item.lower()
 	if item in inventory:
 		inventory.remove(item)
+
+def hasItem(item):
+	item = item.lower()
+	if item in inventory:
+		return True
+	else:
+		return False

@@ -5,8 +5,10 @@ import inventory as inv
 
 class main():
 	global curtainsOpen
+	global livingRoomLocked
 	curtainsOpen = False
-	
+	livingRoomLocked = True	
+
 	#prints quick location info
 	def info(self):
 		print("\nYou are in your bedroom.")
@@ -18,7 +20,7 @@ class main():
 		
 		#player looks around
 		if action == "look around":
-			print("\nThere is a bed and a window" + (". " if curtainsOpen else " with curtains over it. ") + "There is also a door leading to your back yard next to the window and another one on the opposite side of the room.")
+			print("\nThere is a bed and a window" + (". " if curtainsOpen else " with curtains over it. ") + "There is also a door leading to your back yard next to the window and another one leading to your living room on the opposite side of the room.")
         
 
         	#player opens curtains"
@@ -51,3 +53,15 @@ class main():
 		elif action.replace(" the", "") == "go to backyard" or action == "go outside":
 			print("\nYou walk through the door leading to your back yard.")
 			util.setLevel("backyard")
+
+		#player tries to go to their living room
+		elif action.replace(" the", "") == "go to living room":
+			if inv.hasItem("living room key") and livingRoomLocked:
+				print("\nYou unlock the door and walk through it into your living room.")
+				util.setLevel("livingroom")
+				inv.remove("living room key")
+			elif not livingRoomLocked:
+				print("\nYou walk through the door into your living room.")
+				util.setLevel("livingroom")
+			else:
+				print("The door is locked. Maybe there is a key somewhere?")
